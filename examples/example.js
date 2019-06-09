@@ -151,13 +151,13 @@ var onSteamLogOn = function onSteamLogOn(logonResp) {
             // setTimeout(function(){ Dota2.exit(); }, 5000);
         }
     },
-    onSteamServers = function onSteamServers(servers) {
-        util.log("Received servers.");
-        fs.writeFile('servers', JSON.stringify(servers), (err)=>{
-            if (err) {if (this.debug) util.log("Error writing ");}
-            else {if (this.debug) util.log("");}
-        });
-    },
+    // onSteamServers = function onSteamServers(servers) {
+    //     util.log("Received servers.");
+    //     fs.writeFile('servers', JSON.stringify(servers), (err)=>{
+    //         if (err) {if (this.debug) util.log("Error writing ");}
+    //         else {if (this.debug) util.log("");}
+    //     });
+    // },
     onSteamLogOff = function onSteamLogOff(eresult) {
         util.log("Logged off from Steam.");
     },
@@ -192,9 +192,10 @@ try {
 
 steamClient.connect();
 steamClient.on('connected', function() {
+    console.log('connected')
     steamUser.logOn(logOnDetails);
 });
 steamClient.on('logOnResponse', onSteamLogOn);
 steamClient.on('loggedOff', onSteamLogOff);
 steamClient.on('error', onSteamError);
-steamClient.on('servers', onSteamServers);
+// steamClient.on('servers', onSteamServers);

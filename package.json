@@ -5,8 +5,10 @@
     "deferred": "^0.7.10",
     "long": "^4.0.0",
     "merge": "^1.2.1",
-    "steam": "^1.4.1",
-    "steam-resources": "github:seishun/node-steam-resources",
+    "readline-sync": "1.4.9",
+    "steam": "https://github.com/lizilong007/node-steam#master",
+    "steam-resources": "https://github.com/lizilong007/node-steam-resources#master",
+    "steam-totp": "^2.1.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
